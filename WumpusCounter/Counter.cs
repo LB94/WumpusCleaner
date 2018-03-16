@@ -102,8 +102,6 @@ namespace WumpusCounter
 
         internal void countLiveAndDie ()
         {
-            //int live = 0;
-            //int death = 0; 
 
             //on va parcourir deux fois la liste dataWithoutLast pour comparer les lignes
             //si une ligne est dans cette liste, c'est qu'elle y est une fois ou deux fois, soit vivant soit mort soit vivant ET mort
