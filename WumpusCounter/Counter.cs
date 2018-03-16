@@ -89,8 +89,8 @@ namespace WumpusCounter
                     lineWithCount = new string[1, 2] { { line, counter.ToString() } };
                     resultWithCount.Add(lineWithCount);
                 }
-                file.Close();
-            }               
+            }
+            file.Close();
         }
 
         internal void addLineWithoutLast(string line)
