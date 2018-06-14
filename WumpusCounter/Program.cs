@@ -10,7 +10,7 @@ namespace WumpusCounter
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\ludau\Documents\goodData0.txt";
+            string path = @"C:\Users\ludau\Documents\Nouveau-document-texte.txt";
             Counter counter = new Counter();
             counter.readFile(path);
         }

@@ -44,9 +44,9 @@ namespace WumpusCounter
             using (System.IO.StreamWriter write_file =
             new System.IO.StreamWriter(localPath + cpt +".txt"))
             {
-                foreach (string row in goodData)
+                for (int i = 0; i < resultWithCount.Count(); i++)
                 {
-                    write_file.WriteLine(row);
+                     write_file.WriteLine(resultWithCount[i][0, 0] + "," + resultWithCount[i][0,1]);
                 }
             }
             foreach (string row in goodData)
@@ -62,7 +62,7 @@ namespace WumpusCounter
         {
             int counter = 0;
             string row;
-            //si la liste data a déjà la même ligne
+            //si le tableau data a déjà la même ligne
             if (data.Contains(line))
                 return;
             //sinon il l'ajoute
@@ -89,8 +89,7 @@ namespace WumpusCounter
                     lineWithCount = new string[1, 2] { { line, counter.ToString() } };
                     resultWithCount.Add(lineWithCount);
                 }
-            }
-            file.Close();
+            }               
         }
 
         internal void addLineWithoutLast(string line)
@@ -103,9 +102,11 @@ namespace WumpusCounter
 
         internal void countLiveAndDie ()
         {
+            //int live = 0;
+            //int death = 0; 
 
-            //on va parcourir deux fois la liste dataWithoutLast pour comparer les lignes
-            //si une ligne est dans cette liste, c'est qu'elle y est une fois ou deux fois, soit vivant soit mort soit vivant ET mort
+            //on va parcourir deux fois le tableau dataWithoutLast pour comparer les lignes
+            //si une ligne est dans ce tableau, c'est qu'elle y est une fois ou deux fois, soit vivant soit mort soit vivant ET mort
             for (int i = 0; i < dataWithoutLast.Count(); i++)
             {
                 for (int j = i + 1; j < dataWithoutLast.Count(); j++)
